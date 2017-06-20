@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int n,i;
+cout<<"enter the no. of object";
+cin>>n;
+float w[n],p[n],y[n];
+
+cout<<"enter the no. profit and weight of object respectively";
+for(i=0;i<n;i++)
+{
+cin>>p[i]>>w[i];
+y[i]=p[i]/w[i];
+cout<<y[i];
+}
+
+
+int  z;
+cout<<"maximum capacity of knapsack";
+cin>>z;
+
+int weight=0,k=0;
+float x[i],max;
+
+
+for(int i=0;i<n;i++)
+{
+x[i]=0;
+max=y[0];
+
+for(int c=0;c<n;c++)
+{
+	if(y[c]>max)
+		{
+			max=y[c];
+			k=c;
+		}
+cout<<"max="<<max;
+}
+y[k]=-1;
+
+
+while(weight<z)
+{
+	if(weight+w[k]<z)
+	{	x[i]=1;		}
+	else
+	{	x[i]=(z-weight)/w[k];	}
+	weight=x[i]*w[k]+weight;
+
+}
+
+}
+
+
+
+
+for(int i=0;i<n;i++)
+cout<<x[i]<<"\t"<<"" ;
+return 0;
+}
